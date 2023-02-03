@@ -9,11 +9,10 @@ This a website allows to plan your schedule for the day and save events.
 N/A
 
 ## Usage
-
-Click on the Start button to start the quiz. Click on the button for answer choices you think are correct. You will gain 1 point for every question you answer correctly. For every question you answer incorrectly, 5 seconds are subtracted from the clock. The quiz ends when the timer runs out or when all questions have been answered. The final score is revealed at the end. The user is then prompted to provide their initials to save their score to a stored leaderboard.
+Click on the text box for each time block and type an event you would like to schedule for that time. Click the save button to save that event for that time block. If you exit the page, the events previously inputted will show up when you return. The time blocks are color coded based on whether the specified time has happened, is happening, or has not happened yet.
 
 ## Link to deployed Application
-
+https://etfruitninja.github.io/work-day-scheduler/
 
 ## Screenshot
 ![alt=work day scheduler website](./assets/images/screenshot.PNG)
