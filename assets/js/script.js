@@ -2,7 +2,6 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
-  var times = ["hour-9", "hour-10", "hour-11", "hour-12", "hour 13", "hour-14", "hour-15", "hour-16", "hour-17"];
   // establishing variable for current day/time
   var now = dayjs();
   // establishing variable returning to all time blocks
@@ -30,7 +29,7 @@ $(function () {
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
     // compare the Unix timestamps
-  var currentHour = "hour-" + now.format('H');
+  var currentHour = now.format('H');
   console.log(currentHour);
   // console.log(currentTimeStamp);
   // for each time block
@@ -42,6 +41,22 @@ $(function () {
     // else (if timestamp has not yet passed)
       // apply future class
   // for each time block
+  console.log($('#hour-' + currentHour));
+  if (currentHour == 9) {
+    
+  } else {
+    console.log("no");
+  }
+
+  
+  var hourId = "hour-" + currentHour;
+  // this code worked for adding class
+  $("#hour-13").addClass("present");
+
+  if (currentHour == 13) {
+    var hourId = "hour-" + currentHour;
+    $(hourId).addClass("present");
+  }
 
   // $.each(timeBlockEl, function() {
   //   //
@@ -54,19 +69,31 @@ $(function () {
   // for each time-block element (with time-block class)
     // time-block.children('textarea').text(localStorage.getItem($(this).id))
 
-  $.each(timeBlockEl, function() {
-    console.log("hello");
-    console.log($(this).attr("id"));
-    console.log(localStorage.getItem($(this).attr("id")));
-    $(this).children('textarea').val() = "hello";
-  })
+  // $("#hour-9 timeblock").val(localStorage.getItem("hour-9"));
 
-  for (var i = 0; i < times.length; i++) {
-    var currentBlock = $('.container-fluid').eq(i);
-    console.log(currentBlock);
-    console.log(localStorage.getItem(currentBlock.attr("id")));
-    currentBlock.children('textarea').val = localStorage.getItem(currentBlock.attr("id"));
-  }
+  $('#hour-9 textarea').val(localStorage.getItem('hour-9'));
+  $('#hour-10 textarea').val(localStorage.getItem('hour-10'));
+  $('#hour-11 textarea').val(localStorage.getItem('hour-11'));
+  $('#hour-12 textarea').val(localStorage.getItem('hour-12'));
+  $('#hour-13 textarea').val(localStorage.getItem('hour-13'));
+  $('#hour-14 textarea').val(localStorage.getItem('hour-14'));
+  $('#hour-15 textarea').val(localStorage.getItem('hour-15'));
+  $('#hour-16 textarea').val(localStorage.getItem('hour-16'));
+  $('#hour-17 textarea').val(localStorage.getItem('hour-17'));
+
+  // $.each(timeBlockEl, function() {
+  //   console.log("hello");
+  //   console.log($(this).attr("id"));
+  //   console.log(localStorage.getItem($(this).attr("id")));
+  //   $(this).children('textarea').val() = "hello";
+  // })
+
+  // for (var i = 0; i < times.length; i++) {
+  //   var currentBlock = $('.container-fluid').eq(i);
+  //   console.log(currentBlock);
+  //   console.log(localStorage.getItem(currentBlock.attr("id")));
+  //   currentBlock.children('textarea').val = localStorage.getItem(currentBlock.attr("id"));
+  // }
 
   //
   // TODO: Add code to display the current date in the header of the page.
